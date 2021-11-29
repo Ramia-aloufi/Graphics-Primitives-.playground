@@ -11,9 +11,8 @@ struct Line{
     let end:Point
 
 func length()->Double{
-    return sqrt(pow(start.y - start.x,2.0) + pow(end.y - end.x,2.0))
+    return sqrt( pow(end.x - start.x,2.0) + pow(end.y - start.y,2.0))
     }
-    
 }
 
 struct Triangle{
@@ -29,6 +28,7 @@ struct Triangle{
         Lines.append(Line(start: Points[0], end: Points[1]))
         Lines.append(Line(start: Points[1], end: Points[2]))
         Lines.append(Line(start: Points[2], end: Points[0]))
+        
         let s =  (Lines[0].length() + Lines[1].length() + Lines[2].length()) / 2
         
         return sqrt(s * (s - Lines[0].length())*(s - Lines[1].length())*(s - Lines[2].length()))
