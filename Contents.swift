@@ -29,7 +29,9 @@ struct Triangle{
         Lines.append(Line(start: Points[0], end: Points[1]))
         Lines.append(Line(start: Points[1], end: Points[2]))
         Lines.append(Line(start: Points[2], end: Points[0]))
-        return (Lines[0].length() + Lines[1].length() + Lines[2].length()) / 2
+        let s =  (Lines[0].length() + Lines[1].length() + Lines[2].length()) / 2
+        
+        return sqrt(s * (s - Lines[0].length())*(s - Lines[1].length())*(s - Lines[2].length()))
     }
 }
 
